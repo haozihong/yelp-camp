@@ -1,0 +1,26 @@
+<% pageTitle = "YelpCamp - Sign Up" %>
+
+<%- include("./partials/header") %>
+
+<div class="container small-form">
+	<h1>
+		Sign up!
+	</h1>
+
+	<form class="" action="/register" method="POST">
+		<div class="form-group">
+			<label class="lead" for="username">Username</label>
+			<input class="form-control" id="username" type="text" name="username" placeholder="username">
+		</div>
+		<div class="form-group">
+			<label class="" for="password">Password</label>
+			<input class="form-control" id="password" type="password" name="password" placeholder="password">
+		</div>
+		<button class="btn btn-primary btn-lg">
+			Sign Up
+		</button>
+	</form>
+	
+</div>
+
+<%- include("./partials/footer") %>

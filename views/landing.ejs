@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= pageTitle %></title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <!-- <script src="https://kit.fontawesome.com/f48b35042c.js" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="/stylesheets/landing.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+</head>
+<body>
+
+<div class="container">
+  <% if (error && error.length > 0) { %>
+    <div class="alert alert-danger" role="alert"><%= error %></div>
+  <% } %>
+  <% if (success && success.length > 0) { %>
+    <div class="alert alert-success" role="alert"><%= success %></div>
+  <% } %>
+</div>
+
+<div id="landing-header">
+  <h1>Welcome to YelpCamp</h1>
+  <h3>All Amazing Campground Around the World</h3>
+  <hr>
+  <a href="/campgrounds" class="btn btn-success btn-lg" role="button">Veiw All Campgrounds</a>
+</div>
+
+<ul class="slideshow">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+</body>
+</html>
