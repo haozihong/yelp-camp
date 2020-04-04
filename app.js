@@ -1,6 +1,7 @@
 const express = require("express"),
     app = express(),
     PORT = process.env.PORT || 3000,
+	DBURL = process.env.DATABASEURL || "mongodb://localhost:27017/yelp_camp",
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
     flash = require("connect-flash"),
@@ -17,8 +18,7 @@ const commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
-mongoose.connect(process.env.DATABASEURL, {
-// mongoose.connect("mongodb+srv://zh_wdb:i0rXZisJMqHEXgoC@cluster0-axrvi.mongodb.net/yelp_camp?retryWrites=true&w=majority", {
+mongoose.connect(DBURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
@@ -57,6 +57,10 @@ app.use((req, res, next) => {
 app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
+
+app.get("/procenv", (req, res) => {
+	res.send(JSON.stringify(process.env));
+});
 
 app.listen(PORT, _ => {
   console.log(`YelpCamp server listening on ${PORT}`);
