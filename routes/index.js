@@ -20,7 +20,7 @@ router.post("/register", (req, res) => {
 			return res.redirect("/register");
 		}
 		passport.authenticate("local")(req, res, () => {
-			req.flash("success", "Welcome to YelpCamp " + user.username);
+			req.flash("success", "Welcome to CampingShare " + user.username);
 			res.redirect("/campgrounds");
 		});
 	});
